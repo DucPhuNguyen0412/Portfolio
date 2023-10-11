@@ -755,8 +755,10 @@ button:focus {
 
 /* Contact form style */
 .contact-section {
+  z-index: 2; 
+  position: relative;
   background-color: transparent; /* Example background color */
-  padding: 50px 0;
+  padding: 180px 0;
 }
 
 .contact-header {
@@ -773,18 +775,18 @@ button:focus {
 }
 
 .contact-group {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .contact-label {
-  font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: block;
   color: white; 
 }
 
 .contact-input, 
 .contact-form textarea {
+  margin-bottom: 5px;
   width: 100%;
   padding: 10px 15px;
   font-size: 1rem;
@@ -795,13 +797,12 @@ button:focus {
 
 .contact-input:focus, 
 .contact-form textarea:focus {
-  border-color: #007bff; /* Example focus border color */
+  margin-bottom: 5px;
   outline: none;
 }
 
 .contact-submit-btn {
   margin-top: 20px;
-  background-color: #007bff; /* Example background color */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -812,4 +813,21 @@ button:focus {
 
 .contact-submit-btn:hover {
   background-color: #0056b3; /* Example hover background color */
+}
+
+
+/* Contact Form Pop up Style */
+.feedback-message {
+  margin-top: 10px;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
 }
