@@ -9,7 +9,8 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
             Greetings, my name is <span className="purple">Phu Nguyen</span> and 
-            I am a senior studying Computer Science at Virginia Tech.  
+            I am a senior studying Computer Science at <span className="maroon">Virginia</span> 
+            <span className="orange"> Tech</span>.  
             <br /> I live in Blacksburg, Virginia but I'm willing 
             to relocate if required.  
             <br /> While I'm passionate about developing solutions toward Big Data 

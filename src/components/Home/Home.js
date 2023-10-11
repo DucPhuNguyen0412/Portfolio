@@ -1,14 +1,15 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import homeLogo from "../../Assets/Me.PNG";
 import Particle from "../Particle";
+import ContactForm from "./ContactForm"
 import Home2 from "./Home2";
 import Type from "./Type";
 
 function Home() {
   return (
     <section>
-      <Container fluid className="home-section" id="home">
+      <Container fluid className="home-about-section" id="home">
         <Particle />
         <Container className="home-content">
           <Row>
@@ -39,8 +40,9 @@ function Home() {
               />
             </Col>
           </Row>
-        </Container>
+        </Container>  
       </Container>
+      <ContactForm />
       <Home2 />
     </section>
   );

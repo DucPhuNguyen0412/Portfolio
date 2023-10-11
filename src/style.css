@@ -12,10 +12,20 @@ html {
   );
 
   --imp-text-color: #c770f0;
+  --imp-virginia-color: rgb(134, 31, 65);
+  --imp-tech-color: rgb(229, 117, 31);
 }
 
 .purple {
   color: var(--imp-text-color) !important;
+}
+
+.maroon {
+  color: var(--imp-virginia-color) !important;
+}
+
+.orange {
+  color: var(--imp-tech-color) !important;
 }
 
 button:focus {
@@ -740,4 +750,66 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+
+/* Contact form style */
+.contact-section {
+  background-color: transparent; /* Example background color */
+  padding: 50px 0;
+}
+
+.contact-header {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white; 
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  color: white; 
+}
+
+.contact-group {
+  margin-bottom: 20px;
+}
+
+.contact-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  color: white; 
+}
+
+.contact-input, 
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-input:focus, 
+.contact-form textarea:focus {
+  border-color: #007bff; /* Example focus border color */
+  outline: none;
+}
+
+.contact-submit-btn {
+  margin-top: 20px;
+  background-color: #007bff; /* Example background color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+  background-color: #0056b3; /* Example hover background color */
 }
