@@ -37,7 +37,7 @@ function Projects() {
               title="Netflix Clone"
               description="A  Netflix clone, built with Django and Tailwind CSS, offers a user-friendly streaming experience, account control, ensuring user data integrity and secure authentication. It utilizes SQLite for lightweight data storage and efficient retrieval."
               ghLink="https://github.com/DucPhuNguyen0412/netflix-clone"
-              //demoLink="https://blogs.soumya-jit.tech/"
+              demoLink="http://ec2-34-229-94-5.compute-1.amazonaws.com"
             />
           </Col>
 

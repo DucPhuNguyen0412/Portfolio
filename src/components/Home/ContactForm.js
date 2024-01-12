@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import emailjs from 'emailjs-com';
+
 import { Container, Form, Button } from "react-bootstrap";
 
 function ContactForm() {
@@ -7,7 +9,7 @@ function ContactForm() {
         email: "",
         message: "",
     });
-    const [feedback, setFeedback] = useState(null);
+    const [feedback, setFeedback] = useState({ message: '', type: '' });
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleChange = (e) => {
@@ -18,31 +20,19 @@ function ContactForm() {
         }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('https://x74m9hvsxb.execute-api.us-east-1.amazonaws.com/prod', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.status === 200) {
+        emailjs.sendForm('service_xcdc6uc', 'template_x07q154', e.target, 'QiRyO072FIjSu6Wb_')
+            .then((result) => {
                 console.log("Email sent successfully!");
                 setIsSubmitted(true);
                 setFeedback({ message: 'Email sent successfully!', type: 'success' });
-            } else {
-                console.error("Failed to send email. Status:", response.status);
+            }, (error) => {
+                console.error("Failed to send email:", error.text);
                 setFeedback({ message: 'Failed to send email. Please try again.', type: 'error' });
-            }
-        } catch (error) {
-            console.error("There was an error sending the email:", error);
-            setFeedback({ message: 'There was an error sending the email. Please try again.', type: 'error' });
-        }
+            });
     };
-
+    
     if (isSubmitted) {
         return (
             <Container fluid className="contact-section" id="contact">
@@ -100,7 +90,7 @@ function ContactForm() {
                     </Button>
                 </Form>
 
-                {feedback && (
+                {feedback && feedback.message && (
                     <div className={`feedback-message ${feedback.type}`}>
                         {feedback.message}
                     </div>
